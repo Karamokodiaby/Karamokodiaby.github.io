@@ -85,6 +85,14 @@ main{display:flex;flex-direction:column;gap:72px;min-width:0}
 .thesis dd{margin:0}
 .q{font-family:var(--f-display);font-size:1.25rem;line-height:1.45;max-width:58ch;border-left:2px solid var(--accent);padding-left:20px}
 
+.demarche{display:flex;flex-direction:column;gap:20px}
+.epi{display:flex;flex-direction:column;gap:10px;max-width:64ch}
+.epi p{font-size:.98rem}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);border-radius:6px;background:var(--surface);overflow:hidden}
+.step{padding:22px 24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step + .step{border-left:1px solid var(--rule)}
+.step h3{font-size:1.1rem}
+.step p{font-size:.9rem;color:var(--muted)}
 .axes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .axe{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid var(--ink)}
 .axe h3{font-size:1.15rem}
@@ -115,7 +123,8 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:20px;font-s
   .shell{grid-template-columns:minmax(0,1fr);gap:48px;padding-block:32px 32px;
     padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   .id{position:static}
-  .axes,.projects{grid-template-columns:minmax(0,1fr)}
+  .axes,.projects,.steps{grid-template-columns:minmax(0,1fr)}
+  .step + .step{border-left:0;border-top:1px solid var(--rule)}
 }
 @media (max-width:520px){
   .item{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -168,8 +177,8 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:20px;font-s
         <span data-l="en">What banks <em>say</em> about green finance reveals what they <em>do</em>.</span>
       </h2>
       <p>
-        <span data-l="fr">Ma thèse analyse la communication des banques françaises sur la finance verte comme une fenêtre sur leurs stratégies, leurs jeux d'acteurs et leurs pratiques. Mon terrain porte sur la communication des six grands groupes bancaires français de 2014 à 2024, que j'étudie en croisant analyse du discours, lexicométrie et sciences de gestion.</span>
-        <span data-l="en">My thesis reads French banks' green finance communication as a window onto their strategies, stakeholder dynamics and practices. My fieldwork covers the communication of the six major French banking groups from 2014 to 2024, studied through discourse analysis, lexicometry and management science.</span>
+        <span data-l="fr">Ma thèse analyse la communication des banques françaises sur la finance verte comme une fenêtre sur leurs stratégies, leurs jeux d'acteurs et leurs pratiques. Mon terrain porte sur la communication des six grands groupes bancaires français de 2014 à 2024. Dans une perspective de réalisme critique, je confronte ce que les banques disent à ce que vivent les acteurs de la finance, et inversement.</span>
+        <span data-l="en">My thesis reads French banks' green finance communication as a window onto their strategies, stakeholder dynamics and practices. My fieldwork covers the communication of the six major French banking groups from 2014 to 2024. From a critical realist perspective, I confront what banks say with the lived experience of financial actors, and the other way round.</span>
       </p>
       <div class="facts">
         <div class="fact"><span class="n">6</span><span class="l"><span data-l="fr">groupes bancaires français</span><span data-l="en">French banking groups</span></span></div>
@@ -202,6 +211,26 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:20px;font-s
         <span data-l="fr">Comment le discours des banques sur la finance verte construit-il leur légitimité, et que dit-il de la manière dont elles décident, négocient et mettent en œuvre leur stratégie ?</span>
         <span data-l="en">How does banks' green finance discourse build their legitimacy, and what does it tell us about how they decide, negotiate and implement their strategy?</span>
       </p>
+      <div class="demarche">
+        <div class="epi">
+          <span class="label"><span data-l="fr">Démarche</span><span data-l="en">Approach</span></span>
+          <p><span data-l="fr">La thèse s'inscrit dans le réalisme critique de Roy Bhaskar et de ses prolongements. Le discours bancaire y est traité comme une trace observable : ni pris au pied de la lettre, ni réduit à du greenwashing, il est confronté aux pratiques pour remonter aux mécanismes qui les produisent.</span><span data-l="en">The thesis draws on Roy Bhaskar's critical realism and its later developments. Banking discourse is treated as an observable trace: neither taken at face value nor dismissed as greenwashing, it is confronted with practice in order to trace back the mechanisms that produce it.</span></p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3><span data-l="fr">Cartographier le dit</span><span data-l="en">Mapping what is said</span></h3>
+            <p><span data-l="fr">Analyse lexicométrique du corpus 2014 à 2024 : vocabulaires, évolutions et différences entre les six groupes.</span><span data-l="en">Lexicometric analysis of the 2014 to 2024 corpus: vocabularies, shifts and differences across the six groups.</span></p>
+          </div>
+          <div class="step">
+            <h3><span data-l="fr">Comprendre le fait</span><span data-l="en">Understanding what is done</span></h3>
+            <p><span data-l="fr">Entretiens avec des acteurs de tout le système financier, des agences de conseil en vote (proxy) aux directeurs de banque privée, en passant par des consultants et des acteurs des banques publiques d'investissement. Profils d'un an à plus de trente ans d'expérience.</span><span data-l="en">Interviews with actors across the financial system, from proxy advisors to private banking directors, including consultants and public investment bank staff. Experience ranges from one year to more than thirty.</span></p>
+          </div>
+          <div class="step">
+            <h3><span data-l="fr">Confronter, dans les deux sens</span><span data-l="en">Confronting, both ways</span></h3>
+            <p><span data-l="fr">Un aller-retour entre la communication des banques et le vécu des acteurs : chacun sert à interroger l'autre, pour expliquer les écarts et les convergences entre dire et faire.</span><span data-l="en">A back-and-forth between banks' communication and actors' experience, each used to question the other, to explain the gaps and convergences between saying and doing.</span></p>
+          </div>
+        </div>
+      </div>
       <div class="axes">
         <div class="axe">
           <h3><span data-l="fr">Discours et légitimation</span><span data-l="en">Discourse and legitimation</span></h3>
@@ -217,11 +246,11 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:20px;font-s
         </div>
       </div>
       <div class="method" aria-label="Méthodes">
-        <span data-l="fr">analyse du discours</span><span data-l="en">discourse analysis</span>
+        <span data-l="fr">réalisme critique</span><span data-l="en">critical realism</span>
+        <span data-l="fr">méthodologie mixte</span><span data-l="en">mixed methods</span>
         <span data-l="fr">lexicométrie</span><span data-l="en">lexicometry</span>
-        <span data-l="fr">analyse comparative</span><span data-l="en">comparative analysis</span>
-        <span data-l="fr">humanités numériques</span><span data-l="en">digital humanities</span>
-        <span>RSE / ESG</span>
+        <span data-l="fr">entretiens semi-directifs</span><span data-l="en">semi-structured interviews</span>
+        <span data-l="fr">rétroduction</span><span data-l="en">retroduction</span>
       </div>
     </section>
 
