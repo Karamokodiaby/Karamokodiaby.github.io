@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karamoko Diaby</title>
+<meta name="description" content="Karamoko Diaby, doctorant à l'Université Paris 8 (LED). Communication bancaire et finance verte : enjeux discursifs.">
+<meta property="og:title" content="Karamoko Diaby, doctorant, finance verte et communication bancaire">
+<meta property="og:description" content="Thèse à l'Université Paris 8 (ED 401, Laboratoire d'Économie Dionysien) : ce que le discours des banques révèle de leurs stratégies de finance verte.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Karamoko Diaby","alternateName":"Benito","jobTitle":"Doctorant / PhD candidate","affiliation":{"@type":"CollegeOrUniversity","name":"Université Paris 8 Vincennes-Saint-Denis"},"email":"mailto:Karamokodiaby@yahoo.fr","sameAs":["https://www.linkedin.com/in/karamoko-diaby-ab92a76b/"],"knowsAbout":["Finance verte","Green finance","Analyse de discours","Lexicométrie","RSE","ESG"]}
+</script>
+<style>
+/* Layout: colonne d'identité fixe à gauche (nom, rattachement, contact), contenu de recherche à droite ; une seule colonne sur mobile */
+:root{
+  --paper:#F4F6F5;
+  --surface:#FFFFFF;
+  --ink:#14212B;
+  --muted:#5A6A70;
+  --rule:#D5DDDB;
+  --accent:#1E6B52;
+  --accent-soft:#E2EEE9;
+  --mark:#B68A2E;
+  --f-display:'Newsreader',Georgia,'Times New Roman',serif;
+  --f-body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F171C;--surface:#152129;--ink:#E6ECEA;--muted:#93A4A8;--rule:#26353D;
+  --accent:#5FBF99;--accent-soft:#183329;--mark:#D9B061;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F171C;--surface:#152129;--ink:#E6ECEA;--muted:#93A4A8;--rule:#26353D;
+  --accent:#5FBF99;--accent-soft:#183329;--mark:#D9B061;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+html[data-lang="fr"] [data-l="en"],html[data-lang="en"] [data-l="fr"]{display:none!important}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0}
+
+.shell{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:320px minmax(0,1fr);gap:72px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));padding-block:56px 40px}
+
+/* ---- identité ---- */
+.id{position:sticky;top:calc(env(safe-area-inset-top,0px) + 40px);align-self:start;display:flex;flex-direction:column;gap:22px}
+.portrait{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:1px solid var(--rule);background:var(--accent-soft)}
+.id h1{font-size:2.3rem;letter-spacing:-.01em}
+.role{color:var(--muted);font-size:.95rem}
+.affil{font-family:var(--f-mono);font-size:.78rem;line-height:1.7;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
+.affil b{color:var(--ink);font-weight:500}
+.links{display:flex;flex-direction:column;gap:8px;font-size:.92rem}
+.links .pending{color:var(--muted);font-size:.85rem}
+.mail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mail code{font-family:var(--f-mono);font-size:.85rem;user-select:all;overflow-wrap:anywhere}
+.btn-sm{font:500 .75rem var(--f-body);letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--rule);background:var(--surface);color:var(--ink);
+  padding:5px 10px;border-radius:4px;cursor:pointer}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+.lang{display:inline-flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden;align-self:flex-start}
+.lang button{font:500 .78rem var(--f-mono);border:0;background:transparent;color:var(--muted);padding:6px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* ---- contenu ---- */
+main{display:flex;flex-direction:column;gap:72px;min-width:0}
+.lead h2{font-size:clamp(1.9rem,3.4vw,2.8rem);max-width:22ch}
+.lead h2 em{font-style:italic;color:var(--accent)}
+.lead p{margin-top:22px;font-size:1.08rem;max-width:62ch;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:32px;padding-top:20px;border-top:1px solid var(--rule)}
+.fact{display:flex;align-items:baseline;gap:10px}
+.fact .n{font-family:var(--f-display);font-size:1.9rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.fact .l{font-size:.85rem;color:var(--muted);max-width:18ch;line-height:1.35}
+
+.sec{display:flex;flex-direction:column;gap:26px}
+.label{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mark)}
+.sec > h2{font-size:1.7rem}
+.thesis{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:28px 30px;display:flex;flex-direction:column;gap:16px}
+.thesis h3{font-size:1.45rem;font-style:italic}
+.thesis dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 20px;margin:0;font-size:.92rem}
+.thesis dt{font-family:var(--f-mono);font-size:.76rem;color:var(--muted);padding-top:3px}
+.thesis dd{margin:0}
+.q{font-family:var(--f-display);font-size:1.25rem;line-height:1.45;max-width:58ch;border-left:2px solid var(--accent);padding-left:20px}
+
+.axes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.axe{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid var(--ink)}
+.axe h3{font-size:1.15rem}
+.axe p{font-size:.92rem;color:var(--muted)}
+
+.list{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+.item{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.item .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);padding-top:3px}
+.item h3{font-family:var(--f-body);font-size:1rem;font-weight:500;line-height:1.45}
+.item p{font-size:.88rem;color:var(--muted);margin-top:4px}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
+  background:var(--accent-soft);padding:2px 8px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.todo{background:color-mix(in srgb,var(--mark) 18%,transparent);padding:0 4px;border-radius:2px;font-family:var(--f-mono);font-size:.8em}
+
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.proj{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+.proj h3{font-size:1.3rem}
+.proj p{font-size:.92rem;color:var(--muted)}
+.proj .link{font-size:.88rem;margin-top:auto;padding-top:6px}
+.proj .bridge{font-family:var(--f-mono);font-size:.74rem;color:var(--ink);border-top:1px solid var(--rule);padding-top:10px}
+
+.method{display:flex;flex-wrap:wrap;gap:8px}
+.method span{font-family:var(--f-mono);font-size:.8rem;border:1px solid var(--rule);border-radius:3px;padding:4px 10px;background:var(--surface)}
+
+footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:20px;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (max-width:920px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:48px;padding-block:32px 32px;
+    padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .id{position:static}
+  .axes,.projects{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .item{grid-template-columns:minmax(0,1fr);gap:4px}
+  .thesis{padding:22px 20px}
+  .thesis dl{grid-template-columns:minmax(0,1fr);gap:0}
+  .thesis dd{margin-bottom:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="shell">
+
+  <aside class="id">
+    <img class="portrait" src="data:image/jpeg;base64,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" alt="Portrait de Karamoko Diaby" width="112" height="112">
+    <div>
+      <h1>Karamoko Diaby</h1>
+      <p class="role">
+        <span data-l="fr">Doctorant en sciences de gestion. Finance verte, stratégie et communication des organisations.</span>
+        <span data-l="en">PhD candidate in management science. Green finance, strategy and organisational communication.</span>
+      </p>
+    </div>
+    <div class="affil">
+      <b>Université Paris 8</b><br>
+      <span data-l="fr">ED 401 · Laboratoire d'Économie Dionysien (LED)</span>
+      <span data-l="en">Doctoral School 401 · Laboratoire d'Économie Dionysien (LED)</span><br>
+      <span data-l="fr">Direction : Pr. Elen Riot, Dr. Jonathan Labbé</span>
+      <span data-l="en">Supervisors: Prof. Elen Riot, Dr. Jonathan Labbé</span>
+    </div>
+    <div class="links">
+      <div class="mail">
+        <code id="email">Karamokodiaby@yahoo.fr</code>
+        <button class="btn-sm" id="copy" type="button"><span data-l="fr">Copier</span><span data-l="en">Copy</span></button>
+      </div>
+      <a href="https://www.linkedin.com/in/karamoko-diaby-ab92a76b/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="pending"><span data-l="fr">ORCID et HAL : profils en cours de création</span><span data-l="en">ORCID and HAL: profiles being set up</span></span>
+    </div>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="btn-fr" aria-pressed="true">FR</button>
+      <button type="button" id="btn-en" aria-pressed="false">EN</button>
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="lead" id="accueil">
+      <h2>
+        <span data-l="fr">Ce que les banques <em>disent</em> de la finance verte révèle ce qu'elles <em>font</em>.</span>
+        <span data-l="en">What banks <em>say</em> about green finance reveals what they <em>do</em>.</span>
+      </h2>
+      <p>
+        <span data-l="fr">Ma thèse analyse la communication des banques françaises sur la finance verte comme une fenêtre sur leurs stratégies, leurs jeux d'acteurs et leurs pratiques. Je croise analyse du discours, lexicométrie et sciences de gestion, avec un ancrage de terrain dans la RSE et l'attractivité territoriale en Côte d'Ivoire.</span>
+        <span data-l="en">My thesis reads French banks' green finance communication as a window onto their strategies, stakeholder dynamics and practices. I combine discourse analysis, lexicometry and management science, grounded in fieldwork on CSR and territorial attractiveness in Côte d'Ivoire.</span>
+      </p>
+      <div class="facts">
+        <div class="fact"><span class="n">6</span><span class="l"><span data-l="fr">banques françaises comparées</span><span data-l="en">French banks compared</span></span></div>
+        <div class="fact"><span class="n">3</span><span class="l"><span data-l="fr">communications en journées doctorales</span><span data-l="en">doctoral workshop presentations</span></span></div>
+        <div class="fact"><span class="n">33</span><span class="l"><span data-l="fr">portails régionaux du Réseau 360</span><span data-l="en">regional portals in the Réseau 360</span></span></div>
+      </div>
+    </section>
+
+    <section class="sec" id="these">
+      <span class="label"><span data-l="fr">Thèse</span><span data-l="en">Thesis</span></span>
+      <div class="thesis">
+        <h3>
+          <span data-l="fr">Communication bancaire et finance verte : enjeux discursifs</span>
+          <span data-l="en">Banking communication and green finance: discursive issues</span>
+        </h3>
+        <dl>
+          <dt><span data-l="fr">Discipline</span><span data-l="en">Field</span></dt>
+          <dd><span data-l="fr">Sciences de gestion, spécialité stratégie et finance verte</span><span data-l="en">Management science, strategy and green finance</span></dd>
+          <dt><span data-l="fr">Établissement</span><span data-l="en">Institution</span></dt>
+          <dd>Université Paris 8 Vincennes-Saint-Denis, ED 401, LED</dd>
+          <dt><span data-l="fr">Direction</span><span data-l="en">Supervision</span></dt>
+          <dd>Pr. Elen Riot, Dr. Jonathan Labbé</dd>
+          <dt><span data-l="fr">Période</span><span data-l="en">Period</span></dt>
+          <dd><span data-l="fr">Depuis novembre 2024, soutenance prévue <span class="todo">[date]</span></span><span data-l="en">Since November 2024, defence planned <span class="todo">[date]</span></span></dd>
+        </dl>
+      </div>
+      <p class="q">
+        <span data-l="fr">Comment le discours des banques sur la finance verte construit-il leur légitimité, et que dit-il de la manière dont elles décident, négocient et mettent en œuvre leur stratégie ?</span>
+        <span data-l="en">How does banks' green finance discourse build their legitimacy, and what does it tell us about how they decide, negotiate and implement their strategy?</span>
+      </p>
+      <div class="axes">
+        <div class="axe">
+          <h3><span data-l="fr">Discours et légitimation</span><span data-l="en">Discourse and legitimation</span></h3>
+          <p><span data-l="fr">Analyse lexicométrique et discursive des corpus bancaires : vocabulaire, récits et engagements de la finance verte.</span><span data-l="en">Lexicometric and discourse analysis of banking corpora: the vocabulary, narratives and commitments of green finance.</span></p>
+        </div>
+        <div class="axe">
+          <h3><span data-l="fr">Stratégie et jeux d'acteurs</span><span data-l="en">Strategy and stakeholders</span></h3>
+          <p><span data-l="fr">Ce que le discours révèle des choix stratégiques et des rapports entre banques, régulateurs et parties prenantes.</span><span data-l="en">What discourse reveals about strategic choices and the relations between banks, regulators and stakeholders.</span></p>
+        </div>
+        <div class="axe">
+          <h3><span data-l="fr">Des mots aux pratiques</span><span data-l="en">From words to practice</span></h3>
+          <p><span data-l="fr">Reporting ESG, gouvernance et dispositifs par lesquels les engagements affichés deviennent, ou non, des pratiques.</span><span data-l="en">ESG reporting, governance and the mechanisms through which stated commitments become, or fail to become, practice.</span></p>
+        </div>
+      </div>
+      <div class="method" aria-label="Méthodes">
+        <span data-l="fr">analyse du discours</span><span data-l="en">discourse analysis</span>
+        <span data-l="fr">lexicométrie</span><span data-l="en">lexicometry</span>
+        <span data-l="fr">analyse comparative</span><span data-l="en">comparative analysis</span>
+        <span data-l="fr">humanités numériques</span><span data-l="en">digital humanities</span>
+        <span>RSE / ESG</span>
+      </div>
+    </section>
+
+    <section class="sec" id="travaux">
+      <span class="label"><span data-l="fr">Travaux et communications</span><span data-l="en">Work and presentations</span></span>
+      <div class="list">
+        <div class="item">
+          <span class="when"><span data-l="fr">En cours</span><span data-l="en">In progress</span></span>
+          <div>
+            <h3><span class="tag">Article</span><span data-l="fr">Les politiques publiques environnementales à l'épreuve du discours : analyse comparative des communications sur la finance verte de six banques françaises</span><span data-l="en">Environmental public policy put to the test of discourse: a comparative analysis of green finance communication by six French banks</span></h3>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2026</span>
+          <div>
+            <h3><span class="tag">Communication</span><span data-l="fr">Journée doctorale du Laboratoire d'Économie Dionysien</span><span data-l="en">LED doctoral workshop</span></h3>
+            <p>Université Paris 8</p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2026</span>
+          <div>
+            <h3><span class="tag">Communication</span><span data-l="fr">12<sup>e</sup> journée doctorale Analyse des politiques publiques</span><span data-l="en">12th doctoral workshop on Public Policy Analysis</span></h3>
+            <p>Université Le Havre Normandie</p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2025</span>
+          <div>
+            <h3><span class="tag">Communication</span><span data-l="fr">Journée doctorale du Laboratoire d'Économie Dionysien</span><span data-l="en">LED doctoral workshop</span></h3>
+            <p>Université Paris 8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="terrain">
+      <span class="label"><span data-l="fr">De la recherche au terrain</span><span data-l="en">From research to practice</span></span>
+      <div class="projects">
+        <article class="proj">
+          <h3>Réseau 360</h3>
+          <p><span data-l="fr">Réseau de 33 portails régionaux d'information et de services en Côte d'Ivoire, conçus comme outils de stratégie d'attractivité territoriale. Il comprend notamment Daloa360 et le portail de la diaspora 360Régions.</span><span data-l="en">A network of 33 regional news and services portals in Côte d'Ivoire, built as tools for territorial attractiveness strategy. It includes Daloa360 and the diaspora portal 360Régions.</span></p>
+          <p class="bridge"><span data-l="fr">Lien avec la thèse : communication des organisations et production de récits territoriaux</span><span data-l="en">Link to the thesis: organisational communication and the making of territorial narratives</span></p>
+          <p class="link"><a href="https://daloa360.com" target="_blank" rel="noopener">daloa360.com</a> · <a href="https://360regions.com" target="_blank" rel="noopener">360regions.com</a></p>
+        </article>
+        <article class="proj">
+          <h3>AKILI ESG</h3>
+          <p><span data-l="fr">Projet d'accompagnement des entreprises dans leurs stratégies RSE, en particulier les PME d'Afrique de l'Ouest, autour d'une méthodologie de reporting propre (RADF).</span><span data-l="en">A project supporting companies with their CSR strategies, particularly West African SMEs, built around its own reporting methodology (RADF).</span></p>
+          <p class="bridge"><span data-l="fr">Lien avec la thèse : passage des engagements ESG aux pratiques de reporting</span><span data-l="en">Link to the thesis: turning ESG commitments into reporting practice</span></p>
+          <p class="link"><a href="https://akiliesg.com" target="_blank" rel="noopener">akiliesg.com</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="parcours">
+      <span class="label"><span data-l="fr">Parcours</span><span data-l="en">Background</span></span>
+      <div class="list">
+        <div class="item">
+          <span class="when">2025 à 2026</span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Formation</span><span data-l="en">Education</span></span>Master Asset Management</h3>
+            <p><span data-l="fr">Université Paris Nanterre, diplôme obtenu</span><span data-l="en">Université Paris Nanterre, degree awarded</span></p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2023 à 2024</span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Formation</span><span data-l="en">Education</span></span><span data-l="fr">Master 2 Stratégies économiques, numérique et données (SEND), finance durable</span><span data-l="en">MSc Economic Strategy, Digital and Data (SEND), sustainable finance</span></h3>
+            <p>Conservatoire national des arts et métiers (Cnam)</p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2023 à 2024</span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Formation</span><span data-l="en">Education</span></span><span data-l="fr">Master Humanités numériques, numérisation, gestion et exploration de sources textuelles</span><span data-l="en">MA Digital Humanities, digitisation, management and exploration of textual sources</span></h3>
+            <p>Université Sorbonne Nouvelle</p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when"><span data-l="fr">Depuis 2024</span><span data-l="en">Since 2024</span></span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></span><span data-l="fr">Analyste ESG, SustainSoft</span><span data-l="en">ESG Analyst, SustainSoft</span></h3>
+            <p><span data-l="fr">Intégration de référentiels RSE, modules de calcul d'impact (carbone, biodiversité), qualité des données ESG, veille réglementaire.</span><span data-l="en">CSR framework integration, impact calculation modules (carbon, biodiversity), ESG data quality, regulatory monitoring.</span></p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when"><span data-l="fr">Depuis 2025</span><span data-l="en">Since 2025</span></span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></span><span data-l="fr">Animateur de la Fresque du Climat</span><span data-l="en">Climate Fresk facilitator</span></h3>
+            <p><span data-l="fr">Ateliers de sensibilisation dans des lycées.</span><span data-l="en">Awareness workshops in secondary schools.</span></p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2017 à 2022</span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></span><span data-l="fr">AMOA, Product Owner et Scrum Master</span><span data-l="en">Business analysis, Product Owner and Scrum Master</span></h3>
+            <p><span data-l="fr">Bayard, Groupe SATEC, ACMT, KOTscan (Abidjan) : cadrage fonctionnel, conduite du changement, pilotage agile.</span><span data-l="en">Bayard, Groupe SATEC, ACMT, KOTscan (Abidjan): functional scoping, change management, agile delivery.</span></p>
+          </div>
+        </div>
+        <div class="item">
+          <span class="when">2011 à 2016</span>
+          <div>
+            <h3><span class="tag"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></span><span data-l="fr">Chargé de projets événementiels et communication</span><span data-l="en">Events and communication project manager</span></h3>
+            <p><span data-l="fr">Essakane Production, Festival au Désert, Bamako : stratégie de communication, coordination d'événements internationaux.</span><span data-l="en">Essakane Production, Festival au Désert, Bamako: communication strategy, coordination of international events.</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="method" aria-label="Certifications">
+        <span>CSRD Fundamentals</span>
+        <span data-l="fr">Analyse ESG d'entreprise</span><span data-l="en">Corporate ESG analysis</span>
+        <span>PSPO I</span>
+        <span>Lean Six Sigma Green Belt</span>
+        <span data-l="fr">Certificat Data Analyst</span><span data-l="en">Data Analyst certificate</span>
+      </div>
+    </section>
+
+    <section class="sec" id="contact">
+      <span class="label">Contact</span>
+      <h2><span data-l="fr">Collaborations, interventions, échanges sur mes travaux</span><span data-l="en">Collaborations, talks, or a conversation about my work</span></h2>
+      <p style="max-width:60ch;color:var(--muted)">
+        <span data-l="fr">Écrivez-moi à <b style="color:var(--ink)">Karamokodiaby@yahoo.fr</b> ou via LinkedIn. CV complet sur demande.</span>
+        <span data-l="en">Write to me at <b style="color:var(--ink)">Karamokodiaby@yahoo.fr</b> or on LinkedIn. Full CV on request.</span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Karamoko Diaby</span>
+    <span>Université Paris 8 · LED</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function setLang(l){
+    root.setAttribute('data-lang',l); root.lang=l;
+    document.getElementById('btn-fr').setAttribute('aria-pressed',l==='fr');
+    document.getElementById('btn-en').setAttribute('aria-pressed',l==='en');
+    try{localStorage.setItem('kd-lang',l)}catch(e){}
+  }
+  var start='fr';
+  if(location.hash==='#en') start='en';
+  else { try{var s=localStorage.getItem('kd-lang'); if(s==='en'||s==='fr') start=s;}catch(e){} }
+  setLang(start);
+  document.getElementById('btn-fr').onclick=function(){setLang('fr')};
+  document.getElementById('btn-en').onclick=function(){setLang('en')};
+  var c=document.getElementById('copy');
+  c.onclick=function(){
+    var t=document.getElementById('email').textContent;
+    var done=function(){var o=c.innerHTML;c.textContent=root.lang==='en'?'Copied':'Copié';setTimeout(function(){c.innerHTML=o},1600)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel()})}else sel();
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  };
+})();
+</script>
+
+</body>
+</html>
